@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardColumns,Container } from 'react-bootstrap';
+import { CardColumns } from 'react-bootstrap';
 import SingleArticle from './SingleArticle';
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ class NewsArticles extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            news: []
+            news: [],
         };
     }
 
@@ -30,13 +30,12 @@ class NewsArticles extends React.Component {
     }
 
     render() {
-        return (
+        return ( 
             
-            <Container>
-                <CardColumns>
-                    {this.renderArticles}
+                <CardColumns className="m-4">
+                    {this.renderArticles()}
                 </CardColumns>
-            </Container>
+            
         );
     }
 }
