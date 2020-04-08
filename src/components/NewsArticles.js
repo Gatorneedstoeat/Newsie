@@ -8,12 +8,13 @@ class NewsArticles extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            url:"https://newsapi.org/v2/top-headlines?country=us",
             news: [],
         };
     }
 
-    componentDidMount() {
-        axios.get(`https://newsapi.org/v2/top-headlines?country=us`, { 'headers': { 'x-api-key': '3e018690ee5f430da3e46a329a591eb1' } })
+    componentDidMount = () => {
+        axios.get(`${this.state.url}`, { 'headers': { 'x-api-key': '3e018690ee5f430da3e46a329a591eb1' } })
             .then(res => {
                 const data = res.data;
                 this.setState({
@@ -22,8 +23,13 @@ class NewsArticles extends React.Component {
             })
             .catch((error) => console.log(error));
     }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.news !== this.state.news) {
+          console.log(this.state.news);
+        }
+      }
 
-    renderArticles() {
+    renderArticles = () => {
         return this.state.news.map((item,keys) => (
             <SingleArticle key={keys} item={item} />
         ));

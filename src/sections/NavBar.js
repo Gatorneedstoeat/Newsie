@@ -1,28 +1,58 @@
 import React from 'react';
-import {Navbar,Nav,Form,NavDropdown,FormControl,Button} from 'react-bootstrap'
+import { Navbar, Nav, Form, NavDropdown, FormControl, Button } from 'react-bootstrap';
+import NewsArticles from '../components/NewsArticles';
+// import NewsArticles from '../components/NewsArticles';
 
-const NavBar = () => (
-    <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">Newsie</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
-      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form>
-  </Navbar.Collapse>
-</Navbar>
-)
+class NavBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: "",
+    }
+
+  }
+
+  handleSearchInput = event => {
+    this.setState({
+      searchText: event.target.value
+    })
+  }
+
+  handleButtonClick = () => {
+    NewsArticles.upDateState(this.state.searchText);
+  }
+
+  render() {
+    return (
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="#home">Newsie</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Form inline>
+            <FormControl
+              onChange={this.handleSearchInput}
+              value={this.state.searchText}
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2" />
+            <Button onClick={this.handleButtonClick} variant="outline-success">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Navbar>
+    )
+  }
+}
 
 export default NavBar
