@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import ScrollAnimation from 'react-animate-on-scroll';
+// import ScrollAnimation from 'react-animate-on-scroll';
 
 const SingleArticle = ({ item }) => {
 
     return (
-        <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
+        // <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
             <a href={item.url} rel="noopener noreferrer">
                 <Card>
                     <Card.Img variant="top" src={item.urlToImage} alt={item.title} />
@@ -17,7 +17,7 @@ const SingleArticle = ({ item }) => {
                     </Card.Body>
                 </Card>
             </a>
-        </ScrollAnimation>
+        // </ScrollAnimation>
     )
 
 }

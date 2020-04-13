@@ -2,10 +2,17 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import NewsArticles from '../components/NewsArticles';
 
-const News = () => (
-    <Container fluid>
-        <NewsArticles />
-    </Container>
-)
+class News extends React.Component {
+    
+    render() {
+        return (
+            <Container fluid>
+                <NewsArticles url={this.props.url} />
+            </Container>
+        )
+    }
+}
+
+
 
 export default News
