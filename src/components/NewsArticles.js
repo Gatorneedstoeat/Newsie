@@ -1,7 +1,8 @@
 import React from 'react';
 import { CardColumns } from 'react-bootstrap';
-import SingleArticle from './SingleArticle';
 import axios from 'axios';
+import SingleArticle from './SingleArticle';
+
 
 class NewsArticles extends React.Component {
 
