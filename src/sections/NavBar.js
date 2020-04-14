@@ -1,15 +1,16 @@
 import React from 'react';
 import { Navbar, Nav, Form, NavDropdown, FormControl, Button } from 'react-bootstrap';
-import NewsArticles from '../components/NewsArticles';
-// import NewsArticles from '../components/NewsArticles';
+
 
 class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      searchText: "",
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.state={
+      searchText:"",
     }
+    
 
   }
 
@@ -19,8 +20,9 @@ class NavBar extends React.Component {
     })
   }
 
-  handleButtonClick = () => {
-    NewsArticles.upDateState(this.state.searchText);
+  handleButtonClick() {
+    this.props.onCustomSearch(this.state.searchText);
+    
   }
 
   render() {
