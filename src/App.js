@@ -7,7 +7,6 @@ import News from './sections/News';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCustomSearch = this.handleCustomSearch.bind(this);
     this.state = {
       url: {
         type: "top-headlines",
@@ -16,14 +15,13 @@ class App extends React.Component {
     }
   }
 
-  handleCustomSearch(search){
+  handleCustomSearch = (search) =>{
     this.setState({
       url:{
         type:"everything",
-        query:`:?q=${search}`
+        query:`?q=${search}`
       }
     });
-    console.log(`new state ${this.state.url.query} and ${this.state.url.type} and ${search}`);
   }
 
   render() {

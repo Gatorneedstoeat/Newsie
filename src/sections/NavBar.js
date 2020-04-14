@@ -6,23 +6,24 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
     this.state={
       searchText:"",
     }
-    
-
   }
 
   handleSearchInput = event => {
     this.setState({
       searchText: event.target.value
-    })
+    });
   }
 
   handleButtonClick() {
     this.props.onCustomSearch(this.state.searchText);
     
+  }
+  submitHandler = event => {
+    event.preventDefault()
+    this.handleButtonClick();
   }
 
   render() {
@@ -42,16 +43,17 @@ class NavBar extends React.Component {
               <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form inline>
+          <Form inline onSubmit={this.submitHandler}>
             <FormControl
               onChange={this.handleSearchInput}
               value={this.state.searchText}
-              type="text"
+              type="search"
               placeholder="Search"
               className="mr-sm-2" />
             <Button onClick={this.handleButtonClick} variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
+
       </Navbar>
     )
   }
