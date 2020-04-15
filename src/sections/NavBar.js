@@ -6,8 +6,8 @@ class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state={
-      searchText:"",
+    this.state = {
+      searchText: "",
     }
   }
 
@@ -18,12 +18,17 @@ class NavBar extends React.Component {
   }
 
   handleButtonClick() {
-    this.props.onCustomSearch(this.state.searchText);
-    
+    this.props.customSearch(this.state.searchText);
+
   }
   submitHandler = event => {
-    event.preventDefault()
+    event.preventDefault();
     this.handleButtonClick();
+  }
+
+  handleSelectCategory = event => {
+    // console.log(event.target.getAttribute("value"));
+    this.props.category(event.target.getAttribute("value"));
   }
 
   render() {
@@ -35,12 +40,14 @@ class NavBar extends React.Component {
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            <NavDropdown title="Category" id="basic-nav-dropdown">
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="business">Business</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="entertainment">Entertainment</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="general">General</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="health">Health</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="science">Science</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="sports">Sports</NavDropdown.Item>
+              <NavDropdown.Item onClick={this.handleSelectCategory} value="technology">Technology</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form inline onSubmit={this.submitHandler}>

@@ -35,7 +35,7 @@ class NewsArticles extends React.Component {
 
     renderArticles = () => {
         return this.state.news.map((item,keys) => (
-            <SingleArticle key={item.url} item={item} />
+            <SingleArticle key={keys} item={item} />
         ));
     }
 

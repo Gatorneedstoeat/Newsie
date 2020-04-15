@@ -15,19 +15,31 @@ class App extends React.Component {
     }
   }
 
-  handleCustomSearch = (search) =>{
+  handleCustomSearch = (search) => {
     this.setState({
-      url:{
-        type:"everything",
-        query:`?q=${search}`
+      url: {
+        type: "everything",
+        query: `?q=${search}`
       }
     });
+  }
+
+  handleCategory = (category) => {
+    this.setState({
+      url: {
+        type: "top-headlines",
+        query: `?category=${category}`
+      }
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <NavBar onCustomSearch={this.handleCustomSearch}/>
+        <NavBar
+          customSearch={this.handleCustomSearch}
+          category={this.handleCategory}
+        />
         <News url={this.state.url} />
       </div>
     );
