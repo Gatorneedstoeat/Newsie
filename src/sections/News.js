@@ -6,7 +6,7 @@ class News extends React.Component {
     
     render() {
         return (
-            <Container fluid>
+            <Container fluid id="newsSection">
                 <NewsArticles url={this.props.url} />
             </Container>
         )

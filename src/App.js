@@ -32,6 +32,14 @@ class App extends React.Component {
       }
     })
   }
+  handleEverything = () => {
+    this.setState({
+      url: {
+        type: "top-headlines",
+        query: `?country=us`
+      }
+    })
+  }
 
   render() {
     return (
@@ -39,6 +47,7 @@ class App extends React.Component {
         <NavBar
           customSearch={this.handleCustomSearch}
           category={this.handleCategory}
+          everything={this.handleEverything}
         />
         <News url={this.state.url} />
       </div>
