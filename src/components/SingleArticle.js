@@ -14,7 +14,7 @@ const SingleArticle = ({ item }) => {
         description = item.description;
     }
     return (
-        // <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
+  
             <a href={item.url} rel="noopener noreferrer">
                 <Card>
                     <Card.Img variant="top" src={item.urlToImage} alt={item.title} />
@@ -26,7 +26,7 @@ const SingleArticle = ({ item }) => {
                     </Card.Body>
                 </Card>
             </a>
-        // </ScrollAnimation>
+     
     )
 
 }
