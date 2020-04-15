@@ -4,6 +4,15 @@ import { Card } from 'react-bootstrap';
 
 const SingleArticle = ({ item }) => {
 
+    //trunc the card text if bigger than n
+    let description;
+    let strlen = 50;
+    if(item.description.length > strlen){
+        description = `${item.description.substring(0,strlen)} ...`;
+    }
+    else{
+        description = item.description;
+    }
     return (
         // <ScrollAnimation animateIn="slideInUp" animateOnce={true}>
             <a href={item.url} rel="noopener noreferrer">
@@ -12,7 +21,7 @@ const SingleArticle = ({ item }) => {
                     <Card.Body>
                         <Card.Title>{item.title}</Card.Title>
                         <Card.Text>
-                            {item.description}
+                            {description}
                         </Card.Text>
                     </Card.Body>
                 </Card>
