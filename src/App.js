@@ -28,7 +28,7 @@ class App extends React.Component {
     this.setState({
       url: {
         type: "top-headlines",
-        query: `?category=${category}`
+        query: `?category=${category}&country=us`
       }
     })
   }
