@@ -7,7 +7,7 @@ const SingleArticle = ({ item }) => {
     //trunc the card text if bigger than n
     let description;
     let strlen = 50;
-    if(item.description.length > strlen){
+    if(item.description && item.description.length > strlen){
         description = `${item.description.substring(0,strlen)} ...`;
     }
     else{
