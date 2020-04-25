@@ -1,5 +1,27 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Binding *this* to make it availabe to functions
+You can use the following in the constructor to make this available in the callback of the following handleMouseOut function
+```Javascript
+this.handleMouseOut = this.handleMouseOut.bind(this);
+```
+or use the experimental syntax in the handleMouseOut function
+```javascript
+handleMouseOut = () => {
+    console.log('this is:', this);
+}
+```
+or use an arrow function in the callback
+
+```javascript
+// This syntax ensures `this` is bound within handleClick
+    return (
+      <button onClick={() => this.handleMouseOut}>
+        Click me
+      </button>
+    );
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
