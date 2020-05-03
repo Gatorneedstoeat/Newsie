@@ -22,11 +22,11 @@ class NewsArticles extends React.Component {
         })
         .catch((error) => console.log(error));
     }
-
+    //get the default news onload
     componentDidMount = () => {
        this.getNews();
     }
-
+    //if the new url !== the old load that
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.url !== this.props.url) {
           this.getNews();
