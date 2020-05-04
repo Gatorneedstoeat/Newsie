@@ -29,10 +29,12 @@ class NavBar extends React.Component {
   handleSelectCategory = event => {
     // console.log(event.target.getAttribute("value"));
     this.props.category(event.target.getAttribute("value"));
+    window.scrollTo(0, 0);
   }
   handleNavEverything = event => {
     // console.log(event.target.getAttribute("value"));
     this.props.everything(event.target.getAttribute("value"));
+    window.scrollTo(0, 0);
   }
 
 
