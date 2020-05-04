@@ -38,7 +38,7 @@ class NewsArticles extends React.Component {
                 .catch((error) => console.log(error));
         }
     }
-
+    //when the observer fires handle it by setting new y point and getting the next page of news
     handleObserver(entities, observer) {
         const y = entities[0].boundingClientRect.y;
         if (this.state.prevY > y) {
@@ -57,7 +57,7 @@ class NewsArticles extends React.Component {
             rootMargin: "0px",
             threshold: 1.0
         };
-        //create an observer to listen for the intersection of the loadingRef div
+        //create an observer to listen for the intersection of the loadingRef div at the bottom of the news div
         this.observer = new IntersectionObserver(
             this.handleObserver.bind(this),
             options

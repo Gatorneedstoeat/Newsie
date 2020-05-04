@@ -3,6 +3,7 @@ import './css/App.scss';
 import 'animate.css/animate.min.css';
 import NavBar from './sections/NavBar';
 import News from './sections/News';
+import Footer from './sections/Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class App extends React.Component {
           everything={this.handleEverything}
         />
         <News url={this.state.url} />
+        <Footer />
       </div>
     );
   }
