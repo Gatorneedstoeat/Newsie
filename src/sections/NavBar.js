@@ -41,20 +41,20 @@ class NavBar extends React.Component {
   render() {
     return (
      <Container>
-        <Navbar fixed="top" bg="light" expand="lg">
+        <Navbar collapseOnSelect fixed="top" bg="light" expand="lg">
           <Navbar.Brand href="#home">Newsie</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link onClick={this.handleNavEverything} value="everything">Top Headlines</Nav.Link>
+              <Nav.Link onClick={this.handleNavEverything} href="#everything" value="everything">Top Headlines</Nav.Link>
               <NavDropdown title="Category" id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="business">Business</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="entertainment">Entertainment</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="general">General</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="health">Health</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="science">Science</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="sports">Sports</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.handleSelectCategory} value="technology">Technology</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#business" value="business">Business</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#entertainment" value="entertainment">Entertainment</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#general" value="general">General</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#health" value="health">Health</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#science" value="science">Science</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#sports" value="sports">Sports</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.handleSelectCategory} href="#technology" value="technology">Technology</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Form inline onSubmit={this.submitHandler}>
@@ -63,8 +63,9 @@ class NavBar extends React.Component {
                 value={this.state.searchText}
                 type="search"
                 placeholder="Search"
-                className="mr-sm-2" />
-              <Button onClick={this.handleButtonClick} variant="outline-success">Search</Button>
+                className="mr-sm-2"
+                id="search-input" />
+              <Button id="search-button" onClick={this.handleButtonClick} variant="outline-success">Search</Button>
             </Form>
           </Navbar.Collapse>
   
