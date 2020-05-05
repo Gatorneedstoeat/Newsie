@@ -17,10 +17,10 @@ class NavBar extends React.Component {
     });
   }
 
-  handleButtonClick() {
+  handleButtonClick = () => {
     this.props.customSearch(this.state.searchText);
-
   }
+
   submitHandler = event => {
     event.preventDefault();
     this.handleButtonClick();
@@ -40,7 +40,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-     <Container>
+      <Container>
         <Navbar collapseOnSelect fixed="top" bg="light" expand="lg">
           <Navbar.Brand href="#home">Newsie</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -68,9 +68,9 @@ class NavBar extends React.Component {
               <Button id="search-button" onClick={this.handleButtonClick} variant="outline-success">Search</Button>
             </Form>
           </Navbar.Collapse>
-  
+
         </Navbar>
-     </Container>
+      </Container>
     )
   }
 }
