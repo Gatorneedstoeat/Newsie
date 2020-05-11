@@ -30,7 +30,7 @@ const SingleArticle = ({ item }) => {
   
             <a href={item.url} target="_blank" rel="noopener noreferrer">
                 <Card>
-                    <Card.Img variant="top" src={item.urlToImage} alt={title} height="200" />
+                    <Card.Img variant="top" src={item.urlToImage} alt={title} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
