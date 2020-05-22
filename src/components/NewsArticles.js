@@ -43,10 +43,13 @@ class NewsArticles extends React.Component {
     handleObserver(entities, observer) {
         const y = entities[0].boundingClientRect.y;
         if (this.state.prevY > y) {
+            observer.unobserve(this.loadingRef);
             //get the next page of news
             this.getNews(this.state.page + 1);
             //set the page state to current displayed page
-            this.setState({ page: this.state.page + 1 });
+            this.setState({ page: this.state.page + 1 },()=>{
+                observer.observe(this.loadingRef);
+            });
         }
         this.setState({ prevY: y });;
     }
