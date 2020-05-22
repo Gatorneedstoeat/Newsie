@@ -18,10 +18,11 @@ class NewsArticles extends React.Component {
     }
 
     getNews = (page = 1) => {
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
         //less then 5 pages are loading and all the results havent been returned load another(api limit)
         if (this.state.page <= 4 && !this.state.allResults) {
             this.setState({ loading: true });
-            axios.get(encodeURI(`https://newsapi.org/v2/${this.props.url.type}${this.props.url.query}&page=${page}`), { 'headers': { 'x-api-key': '3e018690ee5f430da3e46a329a591eb1' } })
+            axios.get(encodeURI(`${proxyUrl}https://newsapi.org/v2/${this.props.url.type}${this.props.url.query}&page=${page}`), { 'headers': { 'x-api-key': '3e018690ee5f430da3e46a329a591eb1' } })
                 .then(res => {
                     //if the results have add to array else set allResults true
                     if (res.data.articles.length) {
@@ -42,10 +43,13 @@ class NewsArticles extends React.Component {
     handleObserver(entities, observer) {
         const y = entities[0].boundingClientRect.y;
         if (this.state.prevY > y) {
+            observer.unobserve(this.loadingRef);
             //get the next page of news
             this.getNews(this.state.page + 1);
             //set the page state to current displayed page
-            this.setState({ page: this.state.page + 1 });
+            this.setState({ page: this.state.page + 1 },()=>{
+                observer.observe(this.loadingRef);
+            });
         }
         this.setState({ prevY: y });;
     }
@@ -74,7 +78,8 @@ class NewsArticles extends React.Component {
             this.setState({
                 page: 1,
                 news: [],
-                allResults: false
+                allResults: false,
+                prevY:0,
             },() => {this.getNews()});
             //get the defult news for the url
             
