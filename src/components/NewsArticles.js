@@ -75,7 +75,8 @@ class NewsArticles extends React.Component {
             this.setState({
                 page: 1,
                 news: [],
-                allResults: false
+                allResults: false,
+                prevY:0,
             },() => {this.getNews()});
             //get the defult news for the url
             
