@@ -18,7 +18,7 @@ class NewsArticles extends React.Component {
     }
 
     getNews = (page = 1) => {
-        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/";
         //less then 5 pages are loading and all the results havent been returned load another(api limit)
         if (this.state.page <= 4 && !this.state.allResults) {
             this.setState({ loading: true });
