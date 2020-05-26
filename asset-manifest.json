@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Newsie/static/css/main.676011f2.chunk.css",
-    "main.js": "/Newsie/static/js/main.d25fe22c.chunk.js",
-    "main.js.map": "/Newsie/static/js/main.d25fe22c.chunk.js.map",
+    "main.js": "/Newsie/static/js/main.247bf9af.chunk.js",
+    "main.js.map": "/Newsie/static/js/main.247bf9af.chunk.js.map",
     "runtime-main.js": "/Newsie/static/js/runtime-main.3f3fffc0.js",
     "runtime-main.js.map": "/Newsie/static/js/runtime-main.3f3fffc0.js.map",
     "static/css/2.f2ad0615.chunk.css": "/Newsie/static/css/2.f2ad0615.chunk.css",
     "static/js/2.9cc87a4c.chunk.js": "/Newsie/static/js/2.9cc87a4c.chunk.js",
     "static/js/2.9cc87a4c.chunk.js.map": "/Newsie/static/js/2.9cc87a4c.chunk.js.map",
     "index.html": "/Newsie/index.html",
-    "precache-manifest.8634a270529f13307ca632c73afea169.js": "/Newsie/precache-manifest.8634a270529f13307ca632c73afea169.js",
+    "precache-manifest.0846d644579513671987dd84ecc5fa12.js": "/Newsie/precache-manifest.0846d644579513671987dd84ecc5fa12.js",
     "service-worker.js": "/Newsie/service-worker.js",
     "static/css/2.f2ad0615.chunk.css.map": "/Newsie/static/css/2.f2ad0615.chunk.css.map",
     "static/css/main.676011f2.chunk.css.map": "/Newsie/static/css/main.676011f2.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.f2ad0615.chunk.css",
     "static/js/2.9cc87a4c.chunk.js",
     "static/css/main.676011f2.chunk.css",
-    "static/js/main.d25fe22c.chunk.js"
+    "static/js/main.247bf9af.chunk.js"
   ]
 }

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "692f6a81509a68c5ca3a72317082cd9e",
+    "revision": "b276eee7ee73115a28c915cd228661e4",
     "url": "/Newsie/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Newsie/static/css/2.f2ad0615.chunk.css"
   },
   {
-    "revision": "153413bcedfb6ef22fdf",
+    "revision": "1bd61a8d8c8b7d407ffb",
     "url": "/Newsie/static/css/main.676011f2.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Newsie/static/js/2.9cc87a4c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "153413bcedfb6ef22fdf",
-    "url": "/Newsie/static/js/main.d25fe22c.chunk.js"
+    "revision": "1bd61a8d8c8b7d407ffb",
+    "url": "/Newsie/static/js/main.247bf9af.chunk.js"
   },
   {
     "revision": "ec13abb055dd58145c6f",
