@@ -10,8 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       url: {
-        type: "top-headlines",
-        query: "?country=us"
+        type: "latest-news",
+        query: "?language=en"
       }
     }
   }

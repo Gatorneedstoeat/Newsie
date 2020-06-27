@@ -25,12 +25,12 @@ const SingleArticle = ({ item }) => {
         title = item.title;
     }
 
-    let date = new Date(item.publishedAt);
+    let date = new Date(item.published);
     return (
   
             <a href={item.url} target="_blank" rel="noopener noreferrer">
                 <Card>
-                    <Card.Img variant="top" src={item.urlToImage} alt={title} />
+                    <Card.Img variant="top" src={item.url} alt={title} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>
