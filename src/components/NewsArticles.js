@@ -21,7 +21,7 @@ class NewsArticles extends React.Component {
         //less then 5 pages are loading and all the results havent been returned load another(api limit)
         if (this.state.page <= 4 && !this.state.allResults) {
             this.setState({ loading: true });
-            axios.get(encodeURI(`https://newsapi.org/v2/${this.props.url.type}${this.props.url.query}&page=${page}`), { 'headers': { 'x-api-key': '3e018690ee5f430da3e46a329a591eb1' } })
+            axios.get(encodeURI(`https://newsapi.org/v2/${this.props.url.type}${this.props.url.query}&page=${page}`), { 'headers': { 'x-api-key': process.env.REACT_APP_API_KEY } })
                 .then(res => {
                     //if the results have add to array else set allResults true
                     if (res.data.articles.length) {
@@ -86,7 +86,7 @@ class NewsArticles extends React.Component {
     }
 
     renderArticles = () => {
-        return this.state.news.map((item, keys) => (
+        return this.state.news.filter(item => item.urlToImage !== null).map((item, keys) => (
             <SingleArticle key={keys} item={item} />
         ));
     }
